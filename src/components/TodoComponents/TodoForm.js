@@ -20,6 +20,12 @@ class TodoForm extends React.Component {
         this.setState({ newItem: "" });
       };
 
+      handleClear = e => {
+          e.preventDefault()
+          this.props.clearCompleted();
+
+      }
+
     render() {
         return (
 <form onSubmit={this.handleSubmit}>
@@ -30,6 +36,7 @@ class TodoForm extends React.Component {
           onChange={this.handleChanges}
         />
         <button>Add</button>
+        <button onClick={this.handleClear}>Clear completed</button>
       </form>
         )
     }

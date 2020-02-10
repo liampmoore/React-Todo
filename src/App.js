@@ -59,7 +59,7 @@ class App extends React.Component {
 
   clearCompleted = () => {
     const clearedList = this.state.todoData.filter((item) => {
-      return item.completed
+      return !item.completed
     })
 
     this.setState({

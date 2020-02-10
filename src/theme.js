@@ -9,7 +9,8 @@ const theme = createMuiTheme({
     palette: {
         primary: {main: deepOrange[200]},
         secondary: {main: amber.A100},
-        error: {main: red[200]}
+        error: {main: red[200]},
+        type: "dark"
     }
 })
 

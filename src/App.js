@@ -3,6 +3,7 @@ import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 
 import Container from '@material-ui/core/Container';
+import { Typography } from '@material-ui/core';
 
 const initialData = [
   {
@@ -73,9 +74,10 @@ class App extends React.Component {
   render() {
     return (
       <Container maxWidth='xs'>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoList todoData={this.state.todoData} toggleItem={this.toggleItem}/>
+        <Typography variant='h2' gutterBottom>Welcome to your todo app!</Typography>
         <TodoForm addNewItem={this.addNewItem} clearCompleted={this.clearCompleted}/>
+        <TodoList todoData={this.state.todoData} toggleItem={this.toggleItem}/>
+        
       </Container>
     );
   }

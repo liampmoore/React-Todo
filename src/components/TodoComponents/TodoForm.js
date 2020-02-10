@@ -1,4 +1,7 @@
 import React from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import Grid from '@material-ui/core/Grid';
+import { TextField, Button } from '@material-ui/core';
 
 class TodoForm extends React.Component {
     constructor() {
@@ -15,7 +18,7 @@ class TodoForm extends React.Component {
       };
 
       handleSubmit = e => {
-        e.preventDefault();
+        e.preventDefault()
         this.props.addNewItem(this.state.newItem);
         this.setState({ newItem: "" });
       };
@@ -28,16 +31,21 @@ class TodoForm extends React.Component {
 
     render() {
         return (
-<form onSubmit={this.handleSubmit}>
-        <input
+            <AppBar position='relative' style={{marginBottom: '25px', borderRadius: '2.5px'}}>
+                <Grid container direction='row' alignItems='center'>
+
+       <form onSubmit={this.handleSubmit}><Grid container direction='row' alignItems='center'><TextField
+        variant='outlined'
           type="text"
           name="newItem"
           value={this.state.newItem}
           onChange={this.handleChanges}
         />
-        <button>Add</button>
-        <button onClick={this.handleClear}>Clear completed</button>
-      </form>
+        <Button type='submit' size='small'>Add</Button></Grid></form>
+        <Button size='small' onClick={this.handleClear}>Clear complete</Button>
+
+      </Grid>
+      </AppBar>
         )
     }
 }

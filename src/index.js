@@ -7,4 +7,4 @@ import { CssBaseline } from '@material-ui/core';
 
 import theme from './theme';
 
-render( <ThemeProvider><CssBaseline><App /></CssBaseline></ThemeProvider>, document.getElementById('root'));
+render( <ThemeProvider theme={theme}><CssBaseline><App /></CssBaseline></ThemeProvider>, document.getElementById('root'));

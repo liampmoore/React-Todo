@@ -48,23 +48,32 @@ class App extends React.Component {
 
   addNewItem = itemText => {
     const newItem = {
-      name: itemText,
+      task: itemText,
       id: Date.now(),
       completed: false
-    }
+    };
     this.setState({
       todoData: [...this.state.todoData, newItem]
     })
   }
 
+  clearCompleted = () => {
+    const clearedList = this.state.todoData.filter((item) => {
+      return item.completed
+    })
 
+    this.setState({
+      todoData: clearedList
+    })
+
+  }
 
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoList todoData={this.state.todoData} toggleItem={this.toggleItem}/>
-        {/* <TodoForm todoData={this.state.todoData} setTodoData={this.setTodoData}/> */}
+        <TodoForm addNewItem={this.addNewItem} clearCompleted={this.clearCompleted}/>
       </div>
     );
   }

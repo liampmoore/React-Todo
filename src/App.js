@@ -2,6 +2,8 @@ import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 
+import Container from '@material-ui/core/Container';
+
 const initialData = [
   {
     task: 'Organize Garage',
@@ -70,11 +72,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container maxWidth='xs'>
         <h2>Welcome to your Todo App!</h2>
         <TodoList todoData={this.state.todoData} toggleItem={this.toggleItem}/>
         <TodoForm addNewItem={this.addNewItem} clearCompleted={this.clearCompleted}/>
-      </div>
+      </Container>
     );
   }
 }
